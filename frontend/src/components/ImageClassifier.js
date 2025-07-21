@@ -473,7 +473,7 @@ const ImageClassifier = () => {
           >
             <div className="flex items-center space-x-2">
               <Brain size={24} className="text-purple-600" />
-              <h2 className="text-2xl font-bold text-gray-900">In-Depth: How Our AI House Price Predictor Works</h2>
+              <h2 className="text-2xl font-bold text-gray-900">In-Depth: How Our Dual AI House Price Prediction System Works</h2>
             </div>
             {isAIExplanationOpen ? (
               <ChevronUp size={24} className="text-gray-400" />
@@ -484,9 +484,72 @@ const ImageClassifier = () => {
           
           {isAIExplanationOpen && (
             <div className="px-6 pb-6 space-y-8">
-              {/* Machine Learning Model Section */}
+              {/* Overview Section */}
+              <div className="bg-gradient-to-r from-purple-50 to-blue-50 p-6 rounded-lg">
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">🤖 Dual AI Approach Overview</h3>
+                <p className="text-gray-700 mb-4">
+                  Our system combines <strong>two different AI technologies</strong> to provide comprehensive house price predictions:
+                </p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="bg-white p-4 rounded-lg">
+                    <h4 className="font-semibold text-purple-900 mb-2">📸 Image Classification AI</h4>
+                    <p className="text-sm text-gray-700">Deep learning CNN that analyzes house photos to predict price categories</p>
+                  </div>
+                  <div className="bg-white p-4 rounded-lg">
+                    <h4 className="font-semibold text-blue-900 mb-2">📊 Data-Driven Prediction AI</h4>
+                    <p className="text-sm text-gray-700">Statistical ML model using property features for precise price estimation</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Data-Driven AI Section */}
+              <div className="border-l-4 border-blue-500 pl-6">
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">📊 Data-Driven Price Prediction AI</h3>
+                <div className="space-y-4 text-gray-700">
+                  <p>
+                    <strong>How it works:</strong> When you enter property details (square footage, bedrooms, bathrooms, city), 
+                    our statistical machine learning model analyzes these features against our database of 15,474 Southern California homes 
+                    to predict an exact price.
+                  </p>
+                  
+                  <div className="bg-blue-50 p-4 rounded-lg">
+                    <h4 className="font-semibold text-blue-900 mb-2">🧮 Algorithm Components:</h4>
+                    <ul className="space-y-1 text-sm">
+                      <li><strong>Primary Factor:</strong> Square footage (0.583 correlation coefficient - our strongest predictor)</li>
+                      <li><strong>Location Adjustments:</strong> City-specific price multipliers based on historical market data</li>
+                      <li><strong>Feature Modifiers:</strong> Bedroom and bathroom count adjustments</li>
+                      <li><strong>Edge Case Handling:</strong> Price caps, minimum thresholds, and unknown city fallbacks</li>
+                      <li><strong>Confidence Scoring:</strong> Reliability metrics based on data availability and feature completeness</li>
+                    </ul>
+                  </div>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <h4 className="font-semibold text-blue-900 mb-2">🎯 Prediction Process:</h4>
+                      <ol className="text-sm space-y-1 list-decimal list-inside">
+                        <li>Base price calculated from square footage</li>
+                        <li>City-specific adjustment applied</li>
+                        <li>Bedroom/bathroom modifications</li>
+                        <li>Market trend considerations</li>
+                        <li>Final price with confidence score</li>
+                      </ol>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-blue-900 mb-2">📈 Model Performance:</h4>
+                      <ul className="text-sm space-y-1">
+                        <li>Trained on 15,474 real property records</li>
+                        <li>Covers 415+ Southern California cities</li>
+                        <li>Price range: $195K - $2M+</li>
+                        <li>Correlation strength: Strong (0.583)</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Image Classification AI Section */}
               <div className="border-l-4 border-purple-500 pl-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">🧠 Machine Learning Model Architecture</h3>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">📸 Image Classification AI</h3>
                 <div className="space-y-3 text-gray-700">
                   <p>
                     <strong>Model Type:</strong> Our image classifier uses a <strong>Convolutional Neural Network (CNN)</strong> 
@@ -521,29 +584,23 @@ const ImageClassifier = () => {
                 </div>
               </div>
 
-              {/* Model Evaluation Section */}
-              <div className="border-l-4 border-blue-500 pl-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">📈 Model Evaluation & Performance</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="space-y-3 text-gray-700">
-                    <p>
-                      <strong>Training Methodology:</strong> The model uses supervised learning with labeled examples, 
-                      where each house image is tagged with its corresponding price category (Low, Mid, High).
-                    </p>
-                    <p>
-                      <strong>Validation Approach:</strong> Google Teachable Machine automatically splits the data 
-                      for training and validation, helping prevent overfitting and ensuring the model generalizes well to new images.
-                    </p>
-                  </div>
-                  <div className="space-y-3 text-gray-700">
-                    <p>
-                      <strong>Performance Metrics:</strong> The model outputs confidence scores for each prediction, 
-                      indicating how certain it is about the classification. Higher confidence scores suggest more reliable predictions.
-                    </p>
-                    <p>
-                      <strong>Price Categories:</strong> Properties are classified into three distinct price ranges 
-                      based on statistical analysis of the dataset, providing clear market segments for decision-making.
-                    </p>
+              {/* Combined Approach Section */}
+              <div className="border-l-4 border-orange-500 pl-6">
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">🔄 Combined Prediction Power</h3>
+                <div className="space-y-3 text-gray-700">
+                  <p>
+                    <strong>Best of Both Worlds:</strong> When you use both systems together (upload an image AND provide property details), 
+                    you get complementary insights:
+                  </p>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="bg-purple-50 p-4 rounded-lg">
+                      <h4 className="font-semibold text-purple-900 mb-2">Visual Analysis</h4>
+                      <p className="text-sm">Image AI captures aesthetic factors, condition, architectural style, and curb appeal</p>
+                    </div>
+                    <div className="bg-blue-50 p-4 rounded-lg">
+                      <h4 className="font-semibold text-blue-900 mb-2">Quantitative Analysis</h4>
+                      <p className="text-sm">Data AI provides precise calculations based on measurable property characteristics</p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -552,9 +609,8 @@ const ImageClassifier = () => {
               <div className="p-4 bg-gray-50 rounded-lg">
                 <h4 className="font-semibold text-gray-900 mb-2">🔬 Technical Implementation Note</h4>
                 <p className="text-sm text-gray-700">
-                  This implementation demonstrates the practical application of computer vision in real estate valuation. 
-                  The model combines traditional machine learning techniques with modern neural network architectures 
-                  to provide actionable insights for property price estimation.
+                  This dual-approach system demonstrates the practical application of both computer vision and statistical machine learning 
+                  in real estate valuation. The combination provides more comprehensive and reliable price predictions than either method alone.
                 </p>
               </div>
             </div>
